@@ -101,7 +101,7 @@ function placeInTable(y, x) {
 
 function endGame(msg) {
   // TODO: pop up alert message
-
+  lockBoard();
   setTimeout(function(){alert(msg)}, 250);
 }
 
@@ -175,5 +175,7 @@ function checkForWin() {
     }
   }
 }
-
-
+// after game won, still playable as winning player. will get winner alert after each click
+function lockBoard(){
+  document.getElementById('column-top').removeEventListener("click", handleClick);
+}

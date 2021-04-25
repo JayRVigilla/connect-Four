@@ -6,27 +6,14 @@
   border: solid 1px #666;
 }
 
-/* pieces are div within game table cells: draw as colored circles */
-/*
-.piece {
-  /* TODO: make into circles 
-  position: absolute;
-  margin: 5px;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-} 
-*/
+ /* **instead of absolute positioning use animate keyframes */
 
-
-/* css that works with position absolute, but how to animate?
- **instead of absolute positioning use animate keyframes
-*/
 .piece {
   margin-left: 10%;
   width: 80%;
   height: 80%;
   border-radius: 50%;
+  animation-timing-function: ease-out;
 }
 
 .p1{
@@ -46,4 +33,8 @@
 
 #column-top td:hover {
   background-color: gold;
+}
+@keyframes .piece{
+  from{top: -100%;}
+  to{top: 0;}
 }
